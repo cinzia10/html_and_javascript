@@ -48,10 +48,31 @@ const todoList = [todo1, todo2, todo3, todo4, todo5];
 // container.appendChild(par);
 
 
-function writeToDosToDocument(todoArray) {
+// function writeToDosToDocument(todoArray) {
+//     const container = document.getElementById('todo-container');
+//     for (const todo of todoArray) {
+//         const li = document.createElement('li');
+//         li.classList.add('list-element');
+//         const node = document.createTextNode(todo.name);
+//         const priorityNode = document.createTextNode(' - Priorità: ' + todo.priority)
+//         const br = document.createElement('br');
+//         li.appendChild(node);
+//         li.appendChild(br)
+//         li.appendChild(priorityNode);
+//         container.appendChild(li);
+        
+//     }
+// }
+
+// writeToDosToDocument(todoList);
+
+
+
+
+function showList(){
     const container = document.getElementById('todo-container');
-    const ul = document.createElement('ul')
-    for (const todo of todoArray) {
+    container.innerHTML = '';
+    for (const todo of todoList) {
         const li = document.createElement('li');
         li.classList.add('list-element');
         const node = document.createTextNode(todo.name);
@@ -60,10 +81,7 @@ function writeToDosToDocument(todoArray) {
         li.appendChild(node);
         li.appendChild(br)
         li.appendChild(priorityNode);
-        ul.appendChild(li)
-        container.appendChild(ul);
+        container.appendChild(li);
         
     }
 }
-
-writeToDosToDocument(todoList);
